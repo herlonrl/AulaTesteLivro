@@ -3,7 +3,13 @@
 
     public delegate bool Filter<T>(T element);
 
-    public interface IFilter<T>
+
+
+    /*A ideia por trás dessa interface é que qualquer classe que implemente IFilter<T> precisa fornecer uma implementação
+     * para o método Match. Este método será responsável por avaliar se um elemento do tipo T atende ao critério de filtragem 
+     * específico definido pela classe que implementa a interface. O resultado do método Match é um valor booleano, 
+     * indicando se o elemento atende ao critério de filtro (true) ou não (false).   */
+    public interface IFilter<T> 
     {
         bool Match(T element);
     }
